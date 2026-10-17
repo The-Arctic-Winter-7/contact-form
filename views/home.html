@@ -25,13 +25,20 @@
         <form id="contact-form" action="#" method="get">
             <!-- First Name -->
             <div id="fname">
-                <label for="first-name">First Name</label>
+                <div id="label-container">
+                    <label for="first-name">First Name</label>
+                    <span class="err" id="err-fname">First name is required</span>
+                </div>
                 <input type="text" class="text-field" id="first-name" name="first-name">
             </div>
 
             <!-- Last Name -->
             <div id="lname">
-                <label for="last-name">Last Name</label>
+                <div id="label-container">
+                    <label for="last-name">Last Name</label>
+                    <span class="err" id="err-lname">Last name is required</span>
+
+                </div>
                 <input type="text" class="text-field" id="last-name" name="last-name">
             </div>
 
@@ -49,19 +56,28 @@
 
             <!-- LinkedIn URL -->
             <div id="url">
-                <label for="linkedin-url">LinkedIn URL</label>
-                <input type="url" class="text-field" id="linkedin-url" name="linkedin-url">
+                <div id="label-container">
+                    <label for="linkedin-url">LinkedIn URL</label>
+                    <span class="err" id="err-url">Please enter a valid URL</span>
+                </div>
+                <input type="text" class="text-field" id="linkedin-url" name="linkedin-url">
             </div>
 
             <!-- Email Address -->
             <div id="email-address">
-                <label for="email">Email Address</label>
+                <div id="label-container">
+                    <label for="email">Email Address</label>
+                    <span class="err" id="err-email">Please enter a valid email</span>
+                </div>
                 <input type="email" class="text-field" id="email" name="email">
             </div>
 
             <!-- First Meeting -->
             <div id="how-we-met">
-                <label for="first-meeting">How did we meet?</label>
+                <div id="label-container">
+                    <label for="first-meeting">How did we meet?</label>
+                    <span class="err" id="err-first-meeting">Please select an option below</span>
+                </div>
                 <select class="text-field" id="first-meeting" name="first-meeting">
                     <option value="none">-- Please select one --</option>
                     <option value="in-person">Met in Person</option>
@@ -106,6 +122,7 @@
                     <input type="radio" id="text" name="email-format" value="text">
                     Text
                 </label>
+                <span class="err" id="err-email-format">Please select either HTML or Text</span>
             </div>
 
             <!-- Submit Button -->
