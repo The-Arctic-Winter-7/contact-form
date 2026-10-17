@@ -2,6 +2,13 @@
     box-sizing: border-box;
 }
 
+:root {
+    --border-color: lightgray;
+    --button-background-color: rgb(21, 192, 21);
+    --button-background-hover-color: rgb(15, 155, 15);
+    --button-font-color: white;
+}
+
 body {
     margin: 0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -9,8 +16,11 @@ body {
 }
 
 #main {
-    width: 40%;
-    margin: 0 auto;
+    width: 42%;
+    margin: 2rem auto;
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgb(182, 182, 182);
+    border-radius: 0.5rem;
 }
 
 #header {
@@ -71,9 +81,11 @@ body {
 #comments {
     field-sizing: content;
     resize: none;
-    min-height: 5lh;
+    min-height: 6lh;
     max-height: 15lh;
     width: 100%;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-color);
 }
 
 #mlist {
@@ -82,14 +94,38 @@ body {
 
 #eformat {
     grid-area: eformat;
+
+    label {
+        display: inline;
+    }
 }
 
 #submit-button {
     grid-area: button;
+    display: block;
+    height: 2rem;
+    width: 60%;
+    background-color: var(--button-background-color);
+    color: var(--button-font-color);
+    border-radius: 0.25rem;
+    border: none;
+}
+
+#submit-button:hover, input[type="radio"]:hover, input[type="checkbox"]:hover {
+    background-color: var(--button-background-hover-color);
+    cursor: pointer;
 }
 
 label, select {
     display: block;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    accent-color: var(--border-color);
 }
 
 label[for="html"], label[for="text"] {
@@ -99,4 +135,6 @@ label[for="html"], label[for="text"] {
 .text-field {
     height: 1.5rem;
     width: 100%;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border-color);
 }
