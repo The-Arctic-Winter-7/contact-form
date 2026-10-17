@@ -26,7 +26,7 @@
             <!-- First Name -->
             <div id="fname">
                 <div id="label-container">
-                    <label for="first-name">First Name</label>
+                    <label for="first-name" class="required">First Name</label>
                     <span class="err" id="err-fname">First name is required</span>
                 </div>
                 <input type="text" class="text-field" id="first-name" name="first-name">
@@ -35,7 +35,7 @@
             <!-- Last Name -->
             <div id="lname">
                 <div id="label-container">
-                    <label for="last-name">Last Name</label>
+                    <label for="last-name" class="required">Last Name</label>
                     <span class="err" id="err-lname">Last name is required</span>
 
                 </div>
@@ -66,7 +66,7 @@
             <!-- Email Address -->
             <div id="email-address">
                 <div id="label-container">
-                    <label for="email">Email Address</label>
+                    <label for="email" class="conditional-required">Email Address</label>
                     <span class="err" id="err-email">Please enter a valid email</span>
                 </div>
                 <input type="email" class="text-field" id="email" name="email">
@@ -75,7 +75,7 @@
             <!-- First Meeting -->
             <div id="how-we-met">
                 <div id="label-container">
-                    <label for="first-meeting">How did we meet?</label>
+                    <label for="first-meeting" class="required">How did we meet?</label>
                     <span class="err" id="err-first-meeting">Please select an option below</span>
                 </div>
                 <select class="text-field" id="first-meeting" name="first-meeting">
@@ -125,6 +125,7 @@
                 <span class="err" id="err-email-format">Please select either HTML or Text</span>
             </div>
 
+            <p id="key">* = Required Field</p>
             <!-- Submit Button -->
             <button type="submit" id="submit-button">Submit</button>
         </form>

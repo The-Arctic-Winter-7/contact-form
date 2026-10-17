@@ -7,6 +7,7 @@
     --button-background-color: rgb(21, 192, 21);
     --button-background-hover-color: rgb(15, 155, 15);
     --button-font-color: white;
+    --secondary-font-size: 12px;
 }
 
 body {
@@ -37,7 +38,7 @@ body {
         "message message message message message message"
         "mlist mlist mlist . . ."
         "eformat eformat eformat eformat eformat eformat"
-        "button . . . . .";
+        "button . . . . key";
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(7, auto);
 }
@@ -103,6 +104,12 @@ body {
     }
 }
 
+#key {
+    grid-area: key;
+    font-size: var(--secondary-font-size);
+    color: red;
+}
+
 #submit-button {
     grid-area: button;
     display: block;
@@ -149,7 +156,17 @@ label[for="text"] {
 
 .err {
     display: none;
-    font-size: 12px;
+    font-size: var(--secondary-font-size);
     font-weight: 400;
+    color: red;
+}
+
+.required::after {
+    content: " *";
+    color: red;
+}
+
+#contact-form:has(#mail-list:checked) .conditional-required::after {
+    content: " *";
     color: red;
 }
