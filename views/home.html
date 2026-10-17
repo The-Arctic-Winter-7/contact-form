@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,88 @@
     <link rel="stylesheet" href="styles/style.css">
 
     <!-- JavaScript -->
-     <script src="scripts/contact-form.js" defer></script>
+    <script src="scripts/contact-form.js" defer></script>
 
-     <!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="images/contact-form-favicon.png">
 
     <title>Contact Form</title>
 </head>
+
 <body>
     <header id="header">
         <h1>Contact Form</h1>
     </header>
     <form id="contact-form" action="#" method="get">
+        <!-- First Name -->
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" name="first-name">
 
+        <!-- Last Name -->
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" name="last-name">
+
+        <!-- Job Title -->
+        <label for="job-title">Job Title</label>
+        <input type="text" id="job-title" name="job-title">
+
+        <!-- Contact's Company -->
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company">
+
+        <!-- LinkedIn URL -->
+        <label for="linkedin-url">LinkedIn URL</label>
+        <input type="url" id="linkedin-url" name="linkedin-url">
+
+        <!-- Email Address -->
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email">
+
+        <!-- First Meeting -->
+        <label for="first-meeting">
+            How did we meet?
+            <select type="select" id="first-meeting" name="first-meeting">
+                <option value="none">-- Please select one --</option>
+                <option value="in-person">Met in Person</option>
+                <option value="event">Networking Event</option>
+                <option value="mutual">Mutual Contact Referral</option>
+                <option value="social">Social Media</option>
+                <option value="linkedin">LinkedIn</option>
+                <option value="portfolio">Your Portfolio or Website</option>
+                <option value="community">Online Forums or Community Outreach</option>
+                <option value="other">Other</option>
+            </select>
+        </label>
+
+        <!-- Visible if "Other" is selected -->
+        <label for="other">Other (please specify)</label>
+        <input type="text" id="other" name="other">
+
+        <!-- Additional Messages -->
+        <label for="comments">Message</label>
+        <textarea rows="5" id="comments" name="comments"></textarea>
+
+        <!-- Add contact to mailing list-->
+        <label for="mail-list">
+            <input type="checkbox" id="mail-list" name="mail-list" value="mail-list">
+            Please add me to your mailing list
+        </label>
+
+        <!-- Choose Email Format for Mailing List -->
+        <label for="email-format">Choose an email format:
+            <label for="html">
+                <input type="radio" id="html" name="email-format" value="html">
+                HTML
+            </label>
+            <label for="text">
+                <input type="radio" id="text" name="email-format" value="text">
+                Text
+            </label>
+        </label>
+        
+        <!-- Submit Button -->
+        <button type="submit" id="submit-button">Submit</button>
     </form>
 </body>
+
 </html>
