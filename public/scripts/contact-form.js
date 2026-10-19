@@ -1,5 +1,5 @@
 // Regex patterning for validating email formatting
-const emailRegex = /^[a-zA-z0-9._%+-]+@[a-zA-z0-9.-]+\.[a-zA-Z]{2,}$/;
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
 let isMailingListSelected = false;
 
@@ -93,6 +93,7 @@ function clearErrors() {
 }
 
 // Checks if entered url is in the correct format or not
+// I had to do a lot of research for this one. There is definitely a simpler way of achieving this, but it is stricter and ensures a correct format
 function isValidUrl(string) {
     try {
         // Uses native JavaScript URL interface to check for generic url formatting
