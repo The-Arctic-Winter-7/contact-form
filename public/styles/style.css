@@ -29,96 +29,58 @@ body {
 }
 
 #contact-form {
-    display: grid;
+    display: flex;
     gap: 1em;
-    grid-template-areas:
-        "fname fname lname lname job job"
-        "com com url url email email"
-        "meet meet meet other other other"
-        "message message message message message message"
-        "mlist mlist mlist . . ."
-        "eformat eformat eformat eformat eformat eformat"
-        "button . . . . key";
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(7, auto);
-}
+    flex-direction: column;
 
-#fname {
-    grid-area: fname;
-}
-
-#lname {
-    grid-area: lname;
-}
-
-#job {
-    grid-area: job;
-}
-
-#com {
-    grid-area: com;
-}
-
-#url {
-    grid-area: url;
-}
-
-#email-address {
-    grid-area: email;
-}
-
-#how-we-met {
-    grid-area: meet;
-}
-
-#other-text {
-    grid-area: other;
-    visibility: hidden;
-
-}
-
-#messages {
-    grid-area: message;
-}
-
-#comments {
-    field-sizing: content;
-    resize: none;
-    min-height: 6lh;
-    max-height: 15lh;
-    width: 100%;
-    border-radius: 0.25rem;
-    border: 1px solid var(--border-color);
-}
-
-#mlist {
-    grid-area: mlist;
-}
-
-#eformat {
-    grid-area: eformat;
-    display: none;
-
-    label {
-        display: inline;
+    #job {
+        display: flex;
+        flex-direction: column;
     }
-}
 
-#key {
-    grid-area: key;
-    font-size: var(--secondary-font-size);
-    color: red;
-}
+    #com {
+        display: flex;
+        flex-direction: column;
+    }
 
-#submit-button {
-    grid-area: button;
-    display: block;
-    height: 2rem;
-    width: 60%;
-    background-color: var(--button-background-color);
-    color: var(--button-font-color);
-    border-radius: 0.25rem;
-    border: none;
+    #other-text {
+        display: none;
+    }
+
+    #comments {
+        field-sizing: content;
+        resize: none;
+        min-height: 6lh;
+        max-height: 15lh;
+        width: 100%;
+        border-radius: 0.25rem;
+        border: 1px solid var(--border-color);
+    }
+
+    #eformat {
+        display: none;
+
+        label {
+            display: inline;
+        }
+    }
+
+
+    #key {
+        font-size: var(--secondary-font-size);
+        color: red;
+    }
+
+    #submit-button {
+        display: block;
+        justify-content: center;
+        height: 2rem;
+        width: 100%;
+        background-color: var(--button-background-color);
+        color: var(--button-font-color);
+        border-radius: 0.25rem;
+        border: none;
+    }
 }
 
 #submit-button:hover,
@@ -148,8 +110,8 @@ label[for="text"] {
 }
 
 .text-field {
-    height: 1.5rem;
-    width: 100%;
+    height: 2rem;
+    width: 80%;
     border-radius: 0.25rem;
     border: 1px solid var(--border-color);
 }
@@ -169,4 +131,108 @@ label[for="text"] {
 #contact-form:has(#mail-list:checked) .conditional-required::after {
     content: " *";
     color: red;
+}
+
+@media screen and (min-width: 450px) {
+    #contact-form {
+        display: grid;
+        gap: 1em;
+        grid-template-areas:
+            "fname fname lname lname job job"
+            "com com url url email email"
+            "meet meet meet other other other"
+            "message message message message message message"
+            "mlist mlist mlist . . ."
+            "eformat eformat eformat eformat eformat eformat"
+            "button . . . . key";
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(7, auto);
+
+        #fname {
+            grid-area: fname;
+        }
+
+        #lname {
+            grid-area: lname;
+        }
+
+        #job {
+            grid-area: job;
+        }
+
+        #com {
+            grid-area: com;
+        }
+
+        #url {
+            grid-area: url;
+        }
+
+        #email-address {
+            grid-area: email;
+        }
+
+        #how-we-met {
+            grid-area: meet;
+        }
+
+        #other-text {
+            grid-area: other;
+            visibility: hidden;
+
+        }
+
+        #messages {
+            grid-area: message;
+        }
+
+        #comments {
+            field-sizing: content;
+            resize: none;
+            min-height: 6lh;
+            max-height: 15lh;
+            width: 100%;
+            border-radius: 0.25rem;
+            border: 1px solid var(--border-color);
+        }
+
+        #mlist {
+            grid-area: mlist;
+        }
+
+        #eformat {
+            grid-area: eformat;
+            display: none;
+
+            label {
+                display: inline;
+            }
+        }
+
+        #key {
+            grid-area: key;
+            font-size: var(--secondary-font-size);
+            color: red;
+        }
+
+        #submit-button {
+            grid-area: button;
+            display: block;
+            justify-content: center;
+            height: 2rem;
+            max-width: 60%;
+            min-width: max-content;
+            background-color: var(--button-background-color);
+            color: var(--button-font-color);
+            border-radius: 0.25rem;
+            border: none;
+        }
+    }
+
+    .text-field {
+        height: 1.5rem;
+        width: 100%;
+        border-radius: 0.25rem;
+        border: 1px solid var(--border-color);
+    }
 }

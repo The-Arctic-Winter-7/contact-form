@@ -1,6 +1,9 @@
 // Regex patterning for validating email formatting
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+// Checks screen size
+const screenMediaQuery = window.matchMedia("screen and (max-width: 450px)");
+
 let isMailingListSelected = false;
 
 // Runs validation code when submit button is pressed
@@ -66,13 +69,13 @@ document.getElementById("contact-form").onsubmit = () => {
 };
 
 // Checks to see if other is selected and displays or hides the Other text box
-document.getElementById("first-meeting").addEventListener("change", function () {
-    if (this.value == "other") {
-        document.getElementById("other-text").style.visibility = "visible";
-    } else {
-        document.getElementById("other-text").style.visibility = "hidden";
-    }
-});
+document.getElementById("first-meeting").addEventListener("change", updateOther);
+
+// Checks to see if screen is mobile or not and uses appropriate CSS tags
+screenMediaQuery.addEventListener("change", updateOther);
+
+// Updates the Other Text Field
+updateOther();
 
 document.getElementById("mail-list").addEventListener("change", function () {
     if (this.checked) {
@@ -108,5 +111,21 @@ function isValidUrl(string) {
         return isValidDomain && isValidPath;
     } catch (_) {
         return false;
+    }
+}
+
+// Used to update the other text field depending on screen size
+function updateOther() {
+    const otherText = document.getElementById("other-text");
+    const isSelected = document.getElementById("first-meeting").value === "other";
+
+    if (screenMediaQuery.matches) {
+        // On mobile, ensures visibility is no longer used
+        otherText.style.visibility = "";
+        otherText.style.display = isSelected ? "block" : "none";
+    } else {
+        // On desktop, ensures display is block
+        otherText.style.display = "block";
+        otherText.style.visibility = isSelected ? "visible" : "hidden";
     }
 }
