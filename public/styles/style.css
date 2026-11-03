@@ -3,6 +3,7 @@
 }
 
 :root {
+    --background-color: rgb(182, 182, 182);
     --border-color: lightgray;
     --button-background-color: rgb(21, 192, 21);
     --button-background-hover-color: rgb(15, 155, 15);
@@ -20,7 +21,15 @@ body {
     max-width: 800px;
     margin: 2rem auto;
     padding: 1rem;
-    box-shadow: 0 0 1rem rgb(182, 182, 182);
+    box-shadow: 0 0 1rem var(--background-color);
+    border-radius: 0.5rem;
+}
+
+#main-admin {
+    max-width: 1600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    box-shadow: 0 0 1rem var(--background-color);
     border-radius: 0.5rem;
 }
 
