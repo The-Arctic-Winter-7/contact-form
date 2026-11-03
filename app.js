@@ -6,6 +6,8 @@ const PORT = 3002;
 
 app.use(express.static('public'));
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
     res.sendFile(`${import.meta.dirname}/views/home.html`);
 });
