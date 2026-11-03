@@ -23,6 +23,10 @@ body {
     padding: 1rem;
     box-shadow: 0 0 1rem var(--background-color);
     border-radius: 0.5rem;
+
+    p {
+        text-align: center;
+    }
 }
 
 #main-admin {
