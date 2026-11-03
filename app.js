@@ -12,8 +12,19 @@ app.get('/', (req, res) => {
     res.render(`home`);
 });
 
+app.post('/submit-contact', (req, res) => {
+    const contact = req.body;
+    contact['timestamp'] = new Date();
+
+    console.log(contact);
+
+    contacts.push(contact);
+    console.log(contacts);
+    res.render('confirm', { contacts });
+});
+
 app.get('/admin', (req, res) => {
-    res.render('admin');
+    res.render('admin', { contacts });
 });
 
 app.listen(PORT, () => {
