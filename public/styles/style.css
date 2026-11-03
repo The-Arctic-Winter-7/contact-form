@@ -42,7 +42,7 @@ body {
     gap: 1em;
     flex-direction: column;
 
-    #job {
+    #jobtitle {
         display: flex;
         flex-direction: column;
     }
@@ -137,6 +137,11 @@ label[for="text"] {
     color: red;
 }
 
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
 #contact-form:has(#mail-list:checked) .conditional-required::after {
     content: " *";
     color: red;
@@ -165,7 +170,7 @@ label[for="text"] {
             grid-area: lname;
         }
 
-        #job {
+        #jobtitle {
             grid-area: job;
         }
 

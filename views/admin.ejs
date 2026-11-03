@@ -12,6 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://cdn.datatables.net/3.1.4/js/dataTables.min.js"></script>
     <link rel="Stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/4.1.1/css/responsive.dataTables.min.css">
+    <script src="https://cdn.datatables.net/responsive/4.1.1/js/dataTables.responsive.min.js"></script>
 
     <!-- Favicon -->
     <link rel="icon" href="images/contact-form-favicon.png">
@@ -23,63 +25,64 @@
 <body>
     <div id="main-admin">
         <header id="header">
-            <h1>Admin</h1>
+            <h1>Admin Dashboard</h1>
         </header>
-        <table id="contact-table" class="display">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>LinkedIn</th>
-                    <th>Company</th>
-                    <th>Job Title</th>
-                    <th>How we met</th>
-                    <th>Other</th>
-                    <th>Mail Type</th>
-                    <th>Message</th>
-                    <th>Date/Time</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% contacts.forEach(contact=> { %>
+        <div class="table-wrap">
+            <table id="contact-table" class="display">
+                <thead>
                     <tr>
-                        <td>
-                            <%= contacts.first-name %>
-                                <%= contacts.last-name %>
-                        </td>
-                        <td>
-                            <%= contacts.email %>
-                        </td>
-                        <td>
-                            <%= contacts.linkedin-url %>
-                        </td>
-                        <td>
-                            <%= contacts.company %>
-                        </td>
-                        <td>
-                            <%= contacts.job-title %>
-                        </td>
-                        <td>
-                            <%= contacts.first-meeting%>
-                        </td>
-                        <td>
-                            <%= contacts.other%>
-                        </td>
-                        <td>
-                            <%= contacts.mail-list%>
-                        </td>
-                        <td>
-                            <%= contacts.comments%>
-                        </td>
-                        <td>
-                            <%= contacts.timestamp.toLocaleString() %>
-                        </td>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>LinkedIn</th>
+                        <th>Company</th>
+                        <th>Job Title</th>
+                        <th>How we met</th>
+                        <th>Other</th>
+                        <th>Mail Format</th>
+                        <th>Message</th>
+                        <th>Date/Time</th>
                     </tr>
-                    <% }); %>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <% contacts.forEach(contact=> { %>
+                        <tr>
+                            <td>
+                                <%= contact.firstname %> <%= contact.lastname %>
+                            </td>
+                            <td>
+                                <%= contact.email %>
+                            </td>
+                            <td>
+                                <%= contact.linkedin %>
+                            </td>
+                            <td>
+                                <%= contact.company %>
+                            </td>
+                            <td>
+                                <%= contact.job %>
+                            </td>
+                            <td>
+                                <%= contact.meeting %>
+                            </td>
+                            <td>
+                                <%= contact.other %>
+                            </td>
+                            <td>
+                                <%= contact.format %>
+                            </td>
+                            <td>
+                                <%= contact.comments %>
+                            </td>
+                            <td>
+                                <%= contact.timestamp.toLocaleString() %>
+                            </td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
         <script>
-            new DataTable('#contact-table');
+            new DataTable('#contact-table', { responsive: true });
         </script>
     </div>
 </body>

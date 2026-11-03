@@ -14,21 +14,21 @@ document.getElementById("contact-form").onsubmit = () => {
     clearErrors();
 
     // Validates First Name
-    let fname = document.getElementById("first-name").value.trim();
+    let fname = document.getElementById("firstname").value.trim();
     if (fname === "") {
         document.getElementById("err-fname").style.display = "inline";
         isValid = false;
     }
 
     // Validates Last Name
-    let lname = document.getElementById("last-name").value.trim();
+    let lname = document.getElementById("lastname").value.trim();
     if (lname === "") {
         document.getElementById("err-lname").style.display = "inline";
         isValid = false;
     }
 
     // Validates Optional LinkedIn URL
-    let urlLinkedIn = document.getElementById("linkedin-url").value.trim();
+    let urlLinkedIn = document.getElementById("linkedin").value.trim();
     if (urlLinkedIn !== "" && !isValidUrl(urlLinkedIn)) {
         document.getElementById("err-url").style.display = "inline";
         isValid = false;
@@ -43,7 +43,7 @@ document.getElementById("contact-form").onsubmit = () => {
     }
 
     // Validates How We Met
-    let meetingSelected = document.getElementById("first-meeting").value;
+    let meetingSelected = document.getElementById("meeting").value;
     if (meetingSelected == "none") {
         document.getElementById("err-first-meeting").style.display = "inline";
         isValid = false;
@@ -52,7 +52,7 @@ document.getElementById("contact-form").onsubmit = () => {
     // Validates Email Format: HTML or Text
     if (isMailingListSelected) {
         let emailFormatSelected = false;
-        let emailFormatButtons = document.getElementsByName("email-format");
+        let emailFormatButtons = document.getElementsByName("format");
         for (let i = 0; i < emailFormatButtons.length; i++) {
             if (emailFormatButtons[i].checked) {
                 emailFormatSelected = true;
@@ -69,7 +69,7 @@ document.getElementById("contact-form").onsubmit = () => {
 };
 
 // Checks to see if other is selected and displays or hides the Other text box
-document.getElementById("first-meeting").addEventListener("change", updateOther);
+document.getElementById("meeting").addEventListener("change", updateOther);
 
 // Checks to see if screen is mobile or not and uses appropriate CSS tags
 screenMediaQuery.addEventListener("change", updateOther);
@@ -117,7 +117,7 @@ function isValidUrl(string) {
 // Used to update the other text field depending on screen size
 function updateOther() {
     const otherText = document.getElementById("other-text");
-    const isSelected = document.getElementById("first-meeting").value === "other";
+    const isSelected = document.getElementById("meeting").value === "other";
 
     if (screenMediaQuery.matches) {
         // On mobile, ensures visibility is no longer used
