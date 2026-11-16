@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -9,6 +12,7 @@
     --button-background-hover-color: rgb(15, 155, 15);
     --button-font-color: white;
     --secondary-font-size: 12px;
+    --shadow: 0 0 1rem var(--background-color);
 }
 
 body {
@@ -41,6 +45,32 @@ body {
     text-align: center;
 }
 
+/*--Navigation Bar--*/
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 50px;
+    border-bottom: 3px solid var(--border-color);
+    box-shadow: var(--shadow);
+    background-color: --background-color;
+}
+
+.nav-bar-button {
+    display: block;
+    margin: auto;
+    height: 2rem;
+    padding: 0.25rem;
+    max-width: 100%;
+    background-color: var(--button-background-color);
+    color: var(--button-font-color);
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border: none;
+}
+
+
+/*--Contact Form--*/
 #contact-form {
     display: flex;
     gap: 1em;

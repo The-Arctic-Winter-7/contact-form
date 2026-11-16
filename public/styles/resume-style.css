@@ -16,6 +16,27 @@ body {
     line-height: 1.15;
 }
 
+/*--Navigation Bar--*/
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 50px;
+}
+
+.nav-bar-button {
+    display: block;
+    margin: auto;
+    height: 2rem;
+    padding: 0.25rem;
+    max-width: 100%;
+    background-color: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border: none;
+}
+
 p {
     font-size: 13.33px;
     margin: 0;
