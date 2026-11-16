@@ -41,34 +41,34 @@
                     <% contacts.forEach(contact=> { %>
                         <tr>
                             <td>
-                                <%= contact.firstname %> <%= contact.lastname %>
+                                <%= contact.first_name %> <%= contact.last_name %>
                             </td>
                             <td>
                                 <%= contact.email %>
                             </td>
                             <td>
-                                <%= contact.linkedin %>
+                                <%= contact.linkedin_url %>
                             </td>
                             <td>
-                                <%= contact.company %>
+                                <%= contact.company_name %>
                             </td>
                             <td>
-                                <%= contact.job %>
+                                <%= contact.job_title %>
                             </td>
                             <td>
-                                <%= contact.meeting %>
+                                <%= contact.first_meeting %>
                             </td>
                             <td>
                                 <%= contact.other %>
                             </td>
                             <td>
-                                <%= contact.format %>
+                                <%= contact.email_format %>
                             </td>
                             <td>
                                 <%= contact.comments %>
                             </td>
                             <td>
-                                <%= contact.timestamp.toLocaleString() %>
+                                <%= contact.timestamp.toLocaleDateString() %>
                             </td>
                         </tr>
                         <% }); %>
