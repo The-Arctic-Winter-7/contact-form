@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- JavaScript -->
+    <script src="scripts/contact-form.js" defer></script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/contact-form-favicon.png">
+
+    <title>Guestbook</title>
+</head>
+
+<body>
+    <div id="main">
+        <header id="header">
+            <h1>Contact Form</h1>
+        </header>
+        <form id="contact-form" action="/submit-contact" method="POST">
+            <!-- First Name -->
+            <div id="fname">
+                <div id="label-container">
+                    <label for="firstname" class="required">First Name</label>
+                    <span class="err" id="err-fname">First name is required</span>
+                </div>
+                <input type="text" class="text-field" id="firstname" name="firstname">
+            </div>
+
+            <!-- Last Name -->
+            <div id="lname">
+                <div id="label-container">
+                    <label for="lastname" class="required">Last Name</label>
+                    <span class="err" id="err-lname">Last name is required</span>
+
+                </div>
+                <input type="text" class="text-field" id="lastname" name="lastname">
+            </div>
+
+            <!-- Job Title -->
+            <div id="jobtitle">
+                <label for="job">Job Title</label>
+                <input type="text" class="text-field" id="job" name="job">
+            </div>
+
+            <!-- Contact's Company -->
+            <div id="com">
+                <label for="company">Company</label>
+                <input type="text" class="text-field" id="company" name="company">
+            </div>
+
+            <!-- LinkedIn URL -->
+            <div id="url">
+                <div id="label-container">
+                    <label for="linkedin">LinkedIn URL</label>
+                    <span class="err" id="err-url">Please enter a valid URL</span>
+                </div>
+                <input type="text" class="text-field" id="linkedin" name="linkedin">
+            </div>
+
+            <!-- Email Address -->
+            <div id="email-address">
+                <div id="label-container">
+                    <label for="email" class="conditional-required">Email Address</label>
+                    <span class="err" id="err-email">Please enter a valid email</span>
+                </div>
+                <input type="email" class="text-field" id="email" name="email">
+            </div>
+
+            <!-- First Meeting -->
+            <div id="how-we-met">
+                <div id="label-container">
+                    <label for="meeting" class="required">How did we meet?</label>
+                    <span class="err" id="err-first-meeting">Please select an option below</span>
+                </div>
+                <select class="text-field" id="meeting" name="meeting">
+                    <option value="none">-- Please select one --</option>
+                    <option value="in-person">Met in Person</option>
+                    <option value="event">Networking Event</option>
+                    <option value="mutual">Mutual Contact Referral</option>
+                    <option value="social">Social Media</option>
+                    <option value="linkedin">LinkedIn</option>
+                    <option value="portfolio">Your Portfolio or Website</option>
+                    <option value="community">Online Forums or Community Outreach</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <!-- Visible if "Other" is selected -->
+            <div id="other-text">
+                <label for="other">Other (please specify)</label>
+                <input type="text" class="text-field" id="other" name="other">
+            </div>
+
+            <!-- Additional Messages -->
+            <div id="messages">
+                <label for="comments">Message</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+
+            <!-- Add contact to mailing list-->
+            <div id="mlist">
+                <label for="mail-list">
+                    <input type="checkbox" id="mail-list" name="mail-list" value="mail-list">
+                    Please add me to your mailing list
+                </label>
+            </div>
+
+            <!-- Choose Email Format for Mailing List -->
+            <div id="eformat">
+                <label id="format">Choose an email format:</label>
+                <label for="html">
+                    <input type="radio" id="html" name="format" value="html">
+                    HTML
+                </label>
+                <label for="text">
+                    <input type="radio" id="text" name="format" value="text">
+                    Text
+                </label>
+                <span class="err" id="err-email-format">Please select either HTML or Text</span>
+            </div>
+
+            <p id="key">* = Required Field</p>
+            <!-- Submit Button -->
+            <button type="submit" id="submit-button">Submit</button>
+        </form>
+        <p>GitHub Repository: <a
+                href="https://github.com/The-Arctic-Winter-7/contact-form">https://github.com/The-Arctic-Winter-7/contact-form</a>
+        </p>
+    </div>
+</body>
+
+</html>

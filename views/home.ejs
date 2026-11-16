@@ -5,133 +5,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles/style.css">
+    <!-- Imported Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
 
-    <!-- JavaScript -->
-    <script src="scripts/contact-form.js" defer></script>
+    <!-- CSS Stylesheet-->
+    <link rel="Stylesheet" href="styles/resume-style.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="images/contact-form-favicon.png">
+    <link rel="icon" href="images/resume-favicon.jpg">
 
-    <title>Guestbook</title>
+    <!-- Title -->
+    <title>Resume - Esteban Brito</title>
 </head>
 
 <body>
     <div id="main">
-        <header id="header">
-            <h1>Contact Form</h1>
+        <header>
+            <img src="images/resume-profile.jpg" alt="Esteban J. Brito profile picture">
+
+            <div id="header-info">
+                <h1>Esteban J. Brito</h1>
+                <p>12345 Fake Street Rd | City, ST 99999</p>
+                <a href="mailto:stevejbrito@gmail.com">stevejbrito@gmail.com</a>
+                <p>123-456-7890</p>
+                <br>
+            </div>
         </header>
-        <form id="contact-form" action="/submit-contact" method="POST">
-            <!-- First Name -->
-            <div id="fname">
-                <div id="label-container">
-                    <label for="firstname" class="required">First Name</label>
-                    <span class="err" id="err-fname">First name is required</span>
+
+        <section id="main-body">
+            <div id="summary">
+                <h2>Professional Summary</h2>
+                <hr>
+                <p>Former retail associate with 5+ years of customer service and retail experience; now a dedicated BAS
+                    IT-Software Development student at Green River College seeking a summer internship in software
+                    development.</p>
+            </div>
+
+            <div id="skills-certs">
+                <h2>Skills & Certifications</h2>
+                <hr>
+                <ul>
+                    <li><strong>Languages:</strong> Java, C++</li>
+                    <li><strong>Web Development:</strong> HTML/CSS</li>
+                    <li><strong>Tools:</strong> Git, GitHub, Google Docs, Google Sheets, Microsoft Outlook, Eclipse, VS
+                        Code, VS Community</li>
+                    <li><strong>Problem-Solving:</strong> Strong analytical and problem-solving skills</li>
+                    <li><strong>Communication:</strong> Excellent communication and teamwork abilities</li>
+                    <li><strong>Certifications:</strong> Google Coursera AI Essentials Specialization, Google Coursera
+                        Prompting Essentials Specialization, LinkedIn Learning HTML for Programmers</li>
+                </ul>
+            </div>
+
+            <div id="work-experience">
+                <h2>Work Experience</h2>
+                <hr>
+                <p>Led shifts as a keyholder for a retail store in Tuwila, cashiering, and solving customer issues
+                    swiftly.
+                    Worked closely with computers on the job, from designing protocols with Google Docs to managing
+                    inventory for freight orders. Dealt with troubleshooting issues with computers, such as identifying
+                    viruses, cleaning up background tasks to clear space in memory to avoid crashes, and assisting the
+                    manager with assembling computer setups during a move.</p>
+            </div>
+
+            <div id="education">
+                <h2>Education</h2>
+                <hr>
+                <div class="college-education">
+                    <h3>BAS IT-Software Development</h3>
+                    <h4>Green River College - Auburn, WA</h4>
+                    <p>2026 - June 2028</p>
                 </div>
-                <input type="text" class="text-field" id="firstname" name="firstname">
-            </div>
 
-            <!-- Last Name -->
-            <div id="lname">
-                <div id="label-container">
-                    <label for="lastname" class="required">Last Name</label>
-                    <span class="err" id="err-lname">Last name is required</span>
-
+                <div class="college-education">
+                    <h3>Associate of Arts in Computer Science</h3>
+                    <h4>Green River College - Auburn, WA</h4>
+                    <p>2025 - 2026 | GPA: 3.94</p>
                 </div>
-                <input type="text" class="text-field" id="lastname" name="lastname">
-            </div>
 
-            <!-- Job Title -->
-            <div id="jobtitle">
-                <label for="job">Job Title</label>
-                <input type="text" class="text-field" id="job" name="job">
-            </div>
-
-            <!-- Contact's Company -->
-            <div id="com">
-                <label for="company">Company</label>
-                <input type="text" class="text-field" id="company" name="company">
-            </div>
-
-            <!-- LinkedIn URL -->
-            <div id="url">
-                <div id="label-container">
-                    <label for="linkedin">LinkedIn URL</label>
-                    <span class="err" id="err-url">Please enter a valid URL</span>
+                <div class="college-education">
+                    <h3>Associate of Science, Emphasis in Computer Science</h3>
+                    <h4>Highline College - Des Moines, WA</h4>
+                    <p>2016 - 2024</p>
                 </div>
-                <input type="text" class="text-field" id="linkedin" name="linkedin">
+
             </div>
 
-            <!-- Email Address -->
-            <div id="email-address">
-                <div id="label-container">
-                    <label for="email" class="conditional-required">Email Address</label>
-                    <span class="err" id="err-email">Please enter a valid email</span>
+            <div id="employment-history">
+                <h2>Employment</h2>
+                <hr>
+
+                <div id="employment">
+                    <h3>Keyholder / Sales Associate</h3>
+                    <h4><a href="https://mindgames.ca/" target="_blank">Mind Games, LLC</a> - Tukwila, WA</h4>
+                    <p>2019 - 2025</p>
+                    <span id="job-skills"><i>Cashiering, Recovery, Merchandising, Google Docs, Google Sheets, Outlook,
+                            Discord,
+                            Upselling, Customer Service, Training, Receiving, Inventory, Computer
+                            troubleshooting</i></span>
                 </div>
-                <input type="email" class="text-field" id="email" name="email">
             </div>
-
-            <!-- First Meeting -->
-            <div id="how-we-met">
-                <div id="label-container">
-                    <label for="meeting" class="required">How did we meet?</label>
-                    <span class="err" id="err-first-meeting">Please select an option below</span>
-                </div>
-                <select class="text-field" id="meeting" name="meeting">
-                    <option value="none">-- Please select one --</option>
-                    <option value="in-person">Met in Person</option>
-                    <option value="event">Networking Event</option>
-                    <option value="mutual">Mutual Contact Referral</option>
-                    <option value="social">Social Media</option>
-                    <option value="linkedin">LinkedIn</option>
-                    <option value="portfolio">Your Portfolio or Website</option>
-                    <option value="community">Online Forums or Community Outreach</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-
-            <!-- Visible if "Other" is selected -->
-            <div id="other-text">
-                <label for="other">Other (please specify)</label>
-                <input type="text" class="text-field" id="other" name="other">
-            </div>
-
-            <!-- Additional Messages -->
-            <div id="messages">
-                <label for="comments">Message</label>
-                <textarea id="comments" name="comments"></textarea>
-            </div>
-
-            <!-- Add contact to mailing list-->
-            <div id="mlist">
-                <label for="mail-list">
-                    <input type="checkbox" id="mail-list" name="mail-list" value="mail-list">
-                    Please add me to your mailing list
-                </label>
-            </div>
-
-            <!-- Choose Email Format for Mailing List -->
-            <div id="eformat">
-                <label id="format">Choose an email format:</label>
-                <label for="html">
-                    <input type="radio" id="html" name="format" value="html">
-                    HTML
-                </label>
-                <label for="text">
-                    <input type="radio" id="text" name="format" value="text">
-                    Text
-                </label>
-                <span class="err" id="err-email-format">Please select either HTML or Text</span>
-            </div>
-
-            <p id="key">* = Required Field</p>
-            <!-- Submit Button -->
-            <button type="submit" id="submit-button">Submit</button>
-        </form>
-        <p>GitHub Repository: <a
-                href="https://github.com/The-Arctic-Winter-7/contact-form">https://github.com/The-Arctic-Winter-7/contact-form</a>
-        </p>
+        </section>
     </div>
 </body>
 

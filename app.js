@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
     res.render(`home`);
 });
 
+app.get('/contact-form', (req, res) => {
+    res.render(`contact-form`);
+});
+
 app.post('/submit-contact', (req, res) => {
     const contact = req.body;
     contact['timestamp'] = new Date();
